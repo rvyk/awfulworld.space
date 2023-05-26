@@ -1,21 +1,25 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import Navbar from "./components/Navbar";
 import Particles from "react-particles";
 import stars from "./components/particlesConfigs/stars";
 import { loadFull } from "tsparticles";
-import Hero from "./components/Hero";
 import Footer from "./components/Footer";
+import Hero from "./components/HeroSection";
 export default function App() {
   const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
     await loadFull(engine);
   }, []);
+  const [completeTyping, setCompleteTyping] = useState(false);
   return (
     <div className="bg-[#010203] h-screen">
       <Particles id="tsparticles" init={particlesInit} options={stars} />
-      <Hero />
+      <Hero
+        completeTyping={() => {
+          setCompleteTyping(true);
+        }}
+      />
       <Navbar />
-      <Footer />
+      <Footer startTyping={completeTyping} />
     </div>
   );
 }

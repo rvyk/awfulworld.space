@@ -1,17 +1,22 @@
 import React from "react";
+import Typed from "react-typed";
 
-function Footer() {
+function Footer({ startTyping }) {
   return (
     <div className="absolute bottom-2 flex items-center justify-center text-white text-center w-screen animate-pulse text-sm">
-      Made by{" "}
-      <a href="https://github.com/rvyk" className="mx-1.5">
-        rvyk
-      </a>{" "}
-      &{" "}
-      <a href="https://github.com/MajekPL0770" className="mx-1.5">
-        Majek
-      </a>
-      in {new Date().getFullYear()}
+      {startTyping && (
+        <Typed
+          strings={[
+            'Made by <a href="https://github.com/rvyk" className="mx-1.5">rvyk</a> and <a href="https://github.com/MajekPL0770" className="mx-1.5">Majek</a> in 2023',
+          ]}
+          typeSpeed={40}
+          backSpeed={50}
+          loop={false}
+          smartBackspace={false}
+          showCursor={false}
+          contentType="html"
+        />
+      )}
     </div>
   );
 }

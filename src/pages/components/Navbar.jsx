@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 function Navbar() {
   const [currentSection, setCurrentSection] = useState(1);
 
@@ -14,13 +13,13 @@ function Navbar() {
         </p>
       </div>
       <div className="flex items-end md:items-center mr-4 md:mr-8 flex-col md:flex-row">
-        <p
+        <motion
           className={`${
             currentSection === 1 ? "text-zinc-600" : "text-slate-50"
           } mx-2 my-1 md:my-0 cursor-pointer transition-all hover:-translate-y-1 hover:text-purple-500`}
         >
           .us()
-        </p>
+        </motion>
         <p
           className={`${
             currentSection === 2 ? "text-zinc-600" : "text-slate-50"
