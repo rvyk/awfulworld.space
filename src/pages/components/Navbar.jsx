@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 function Navbar() {
   const [currentSection, setCurrentSection] = useState(1);
 
@@ -8,32 +9,38 @@ function Navbar() {
   return (
     <div className="fixed top-7 md:top-0 w-screen h-14 bg-transparent flex justify-between items-center">
       <div className="left-4 ml-4 md:ml-8">
-        <p className="text-purple-500 cursor-pointer text-xl hover:scale-125 transition-all">
+        <motion.p
+          whileHover={{ scale: 1.25 }}
+          className="text-purple-500 cursor-pointer text-xl"
+        >
           .us()
-        </p>
+        </motion.p>
       </div>
       <div className="flex items-end md:items-center mr-4 md:mr-8 flex-col md:flex-row">
-        <motion
+        <motion.p
+          whileHover={{ color: "#ac54f4", translateY: -2 }}
           className={`${
             currentSection === 1 ? "text-zinc-600" : "text-slate-50"
-          } mx-2 my-1 md:my-0 cursor-pointer transition-all hover:-translate-y-1 hover:text-purple-500`}
+          } mx-2 my-1 md:my-0 cursor-pointer`}
         >
           .us()
-        </motion>
-        <p
+        </motion.p>
+        <motion.p
+          whileHover={{ color: "#ac54f4", translateY: -2 }}
           className={`${
             currentSection === 2 ? "text-zinc-600" : "text-slate-50"
-          } mx-2 my-1 md:my-0 cursor-pointer transition-all hover:-translate-y-1 hover:text-purple-500`}
+          } mx-2 my-1 md:my-0 cursor-pointer`}
         >
           .aboutUs()
-        </p>
-        <p
+        </motion.p>
+        <motion.p
+          whileHover={{ color: "#ac54f4", translateY: -2 }}
           className={`${
             currentSection === 3 ? "text-zinc-600" : "text-slate-50"
-          } mx-2 my-1 md:my-0 cursor-pointer transition-all hover:-translate-y-1 hover:text-purple-500`}
+          } mx-2 my-1 md:my-0 cursor-pointer`}
         >
           .contactUs()
-        </p>
+        </motion.p>
       </div>
     </div>
   );

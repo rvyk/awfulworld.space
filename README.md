@@ -4,7 +4,7 @@ Simple portfolio website with Space/Code theme built with React
 
 ## Tech Stack
 
-- React, TailwindCSS, Flowbite
+- Vite, React, TailwindCSS
 
 ## Links
 
